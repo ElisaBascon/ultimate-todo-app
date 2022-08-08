@@ -4,11 +4,11 @@ export default function TaskCard(props) {
     const {task: {name, image, useful_link, urgency, description, done }, onDelete} = props;
     return (
     <div>
-        <image src={image}></image>
-        <p>{urgency}</p>
-        <p>{name}</p>
+        <img src={image} alt="name" width="10%"/>
+        <p>Urgency {urgency} !</p>
+        <h3>{name}</h3>
         <p>{description}</p>
-        <p>resources: {useful_link}</p>
+        <p>⚡ {useful_link} ⚡</p>
         <button onClick={() => onDelete(name)}>🗑️</button>
     </div>
     )
