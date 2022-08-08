@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function TaskCard(props) {
-    const {task: {name, image, useful_link, urgency, description, done, }, onDelete} = props;
+    const {task: {name, image, useful_link, urgency, description, done }, onDelete} = props;
     return (
     <div>
         <image src={image}></image>
