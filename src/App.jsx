@@ -29,13 +29,27 @@ function App() {
     setTask(updateTasks);
   }  
 
+  const handleUrgency = () => {
+    const orderUrgency = [...task].sort((a, b) => b.urgency - a.urgency);
+    setTask(orderUrgency);
+  }
+
   return (
     <div className="App">
-    <h1>To do list</h1>
-    <SearchBar onSearch={handleSearch} />
+    <nav>
+      <span>
+        <img className='logo' src='./images/logo.png' width="10%"></img>
+        <h1>To do list</h1>
+      </span>
+      
+      <SearchBar onSearch={handleSearch} />
 
-    {showForm && <NewTask newTask={handleNewTask} />}
-    <button onClick={() => setShowForm(prev => !prev)}>{!showForm ? "Add New Task" : "Hide form"}</button>
+      {showForm && <NewTask newTask={handleNewTask} />}
+      <button onClick={() => setShowForm(prev => !prev)}>{!showForm ? "Add New Task" : "Hide form"}</button>
+    
+      <button onClick={handleUrgency}>Short by Urgency</button>
+    
+    </nav>
 
     {task.map((elem) => {
       return (

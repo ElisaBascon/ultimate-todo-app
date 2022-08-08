@@ -3,13 +3,14 @@ import React from "react";
 export default function TaskCard(props) {
     const {task: {name, image, useful_link, urgency, description, done }, onDelete} = props;
     return (
-    <div>
-        <img src={image} alt="name" width="10%"/>
-        <p>Urgency {urgency} !</p>
+    <div className="cardTask">
+    <button className="deleteButton" onClick={() => onDelete(name)}>X</button>
+        <img src={image} alt="name" width="100%"/>
+        <h3> {urgency} -</h3>
         <h3>{name}</h3>
         <p>{description}</p>
-        <p>⚡ {useful_link} ⚡</p>
-        <button onClick={() => onDelete(name)}>🗑️</button>
+        <h6>⚡ {useful_link} ⚡</h6>
+        
     </div>
     )
 }

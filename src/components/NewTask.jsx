@@ -25,6 +25,7 @@ export default function NewTask(props) {
         })
     }
 
+
     return (
         <div>
             <form onSubmit={handleForm}>
