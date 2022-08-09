@@ -28,7 +28,7 @@ h6 {
 
 a {
   text-decoration: none;
-  color: tan;
+  color: rgb(255 182 0);
 }
 
 body {
@@ -79,6 +79,14 @@ input {
   color: #19365c;
   padding: 5px 10px;
   font-size: larger;
+}
+
+label {
+  margin-left: 70%;
+  font-family: 'Amatic SC', cursive;
+  color: #19365c;
+  font-size: 22px;
+  border-radius: 50px;
 }
 
 .taskContainer {
