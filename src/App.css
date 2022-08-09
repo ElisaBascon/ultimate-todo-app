@@ -4,42 +4,61 @@
     box-sizing: 0;
 }
 
-body {
-    padding: 20px;
+:root {
+  --main-gap: 20px;
+  --br: 15px;
 }
 
 h1 {
   font-family: 'Amatic SC', cursive;
   font-size: 80px;
   color: #19365c;
+  text-align: center;
 }
-
-/* h3 {
-  font-family: 'Amatic SC', cursive;  
-  //font-family: 'Koulen', cursive;
-  color: #f86f29 ;
-} */
 
 p,
 h6 {
   color: #434c58;
 }
 
+body {
+  margin-top: 50px;
+}
+
+header {
+  padding: 20px 20px 0px 20px;
+}
+
 nav {
-  position: relative;
-  padding-right: 16px;
-  padding-left: 16px;
-  justify-content: space-between;
+  position: fixed;
+  top: 0;
   width: 100%;
-  width: 100%;
-  height: 100%;
-  max-width: none;
+  background-color: white;
+  border-bottom: 1px solid #19365c;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 button {
   font-family: 'Amatic SC', cursive;
+  background-color: white;
   border: 1px solid #19365c;
   color: #19365c;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: larger;
+}
+
+button:hover {
+  font-family: 'Amatic SC', cursive;
+  background-color: #19365c;
+  border: 1px solid #19365c;
+  color: white;
   padding: 5px 10px;
   border-radius: 20px;
 }
@@ -48,16 +67,65 @@ input {
   font-family: 'Amatic SC', cursive;
   border: #19365c;
   color: #19365c;
+  padding: 5px 10px;
+  font-size: larger;
+}
+
+.taskContainer {
+  padding: 20px;
 }
 
 div.cardTask {
-    align-items: center;
-    padding: 15px;
-    margin-top: 20px;
-    border: 2px solid #19365c;
-    border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #19365c;
+  border-radius: var(--br);
+  background-image: url("../public/images/background1.jpg");
 }
 
 div.cardTask img {
     margin: 10px 0;
+    /*filter: grayscale(100%);*/
+}
+
+@media (min-width: 568px) {
+  header h1 {
+    text-align: center;
+  }
+  div.cardTask {
+    width: 47%;
+  }
+  .taskContainer {
+    max-width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--main-gap);
+    margin: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  div.cardTask {
+    width: calc(33.33% - var(--main-gap)*2 / 3);
+  }
+  .taskContainer {
+    max-width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--main-gap);
+    margin: auto;
+  }
+}
+
+@media (min-width: 1300px) {
+  div.cardTask {
+    width: calc(25% - var(--main-gap)*3 / 4);
+  }
+  .taskContainer{
+    max-width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--main-gap);
+    margin: auto;
+  }
 }

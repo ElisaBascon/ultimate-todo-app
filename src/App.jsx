@@ -37,24 +37,26 @@ function App() {
   return (
     <div className="App">
     <nav>
-      <span>
-        <img className='logo' src='./images/logo.png' width="10%"></img>
-        <h1>To do list</h1>
-      </span>
-      
-      <SearchBar onSearch={handleSearch} />
-
-      {showForm && <NewTask newTask={handleNewTask} />}
-      <button onClick={() => setShowForm(prev => !prev)}>{!showForm ? "Add New Task" : "Hide form"}</button>
-    
-      <button onClick={handleUrgency}>Short by Urgency</button>
-    
+      <ul>
+        <li><img className='logo' src='./images/logo.png' width="50px"></img></li>
+        <li>{showForm && <NewTask newTask={handleNewTask} />}
+          <button onClick={() => setShowForm(prev => !prev)}>{!showForm ? "Add New Task" : "Hide form"}</button></li>
+        <li><button onClick={handleUrgency}>Short by Urgency</button></li>
+        <li><SearchBar onSearch={handleSearch} /></li>
+      </ul>
     </nav>
 
-    {task.map((elem) => {
-      return (
-        <TaskCard key={elem.name} task={elem} onDelete={handleDelete}/>
-      )})}
+    <header>
+      <h1>To do list</h1>
+    </header>  
+    
+    <div className='taskContainer'>
+      {task.map((elem) => {
+        return (
+          <TaskCard key={elem.name} task={elem} onDelete={handleDelete}/>
+        )})}
+    </div>
+
     </div>
   );
 }
