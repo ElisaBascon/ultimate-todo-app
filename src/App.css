@@ -16,9 +16,19 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  font-family: 'Slabo 27px', serif;
+  color: #19365c;
+}
+
 p,
 h6 {
   color: #434c58;
+}
+
+a {
+  text-decoration: none;
+  color: tan;
 }
 
 body {
@@ -84,7 +94,8 @@ div.cardTask {
 }
 
 div.cardTask img {
-    margin: 10px 0;
+  width: 100%;
+  margin: 10px 0;
     /*filter: grayscale(100%);*/
 }
 
