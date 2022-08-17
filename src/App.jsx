@@ -38,7 +38,7 @@ function App() {
     <div className="App">
     <nav>
       <ul>
-        <li><img className='logo' src='./images/logo.png' width="50px"></img></li>
+        <li><img className='logo' src='./images/logo.png' width="50px" alt='imageLogo' ></img></li>
         <li>{showForm && <NewTask newTask={handleNewTask} />}
           <button onClick={() => setShowForm(prev => !prev)}>{!showForm ? "Add New Task" : "Hide form"}</button></li>
         <li><button onClick={handleUrgency}>Short by Urgency</button></li>
